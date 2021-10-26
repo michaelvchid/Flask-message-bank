@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}View Messages{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <div name="messages">
+
+    {% for msg in msgs %}
+    <br><br>{{msg[0]}}
+    <br>- <i>{{msg[1]}}</i>
+  {% endfor %}
+
+  </div>
+  
+{% endblock %}
