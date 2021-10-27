@@ -45,7 +45,6 @@ def insert_message(request):
 	INSERT INTO messages (id, message, handle)
 	VALUES (?, ?, ?)
 	"""
-	print(row_count)
 	cursor.execute(cmd, (row_count[0], message, handle))
 	g.message_db.commit()
 	g.message_db.close()
@@ -59,6 +58,5 @@ def random_message(n):
 	SELECT message, handle FROM messages ORDER BY RANDOM() LIMIT ?;
 	"""
 	info = cursor.execute(cmd, (n,)).fetchall()
-	print(info)
 	return info
 

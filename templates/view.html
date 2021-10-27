@@ -1,17 +1,23 @@
 {% extends 'base.html' %}
-
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 {% block header %}
-  <h1>{% block title %}View Messages{% endblock %}</h1>
+<h1>{% block title %}View Messages{% endblock %}</h1>
 {% endblock %}
-
-{% block content %}
+<section class="content">
+  {% block content %}
   <div name="messages">
 
     {% for msg in msgs %}
-    <br><br>{{msg[0]}}
-    <br>- <i>{{msg[1]}}</i>
-  {% endfor %}
+    <br>
+    <span class="message">{{msg[0]}}</span>
+    <br>
+    <span class="handle">
+      - {{msg[1]}}
+    </span>
+    <br>
+    {% endfor %}
 
   </div>
   
-{% endblock %}
+  {% endblock %}
+</section>

@@ -1,20 +1,22 @@
 {% extends 'base.html' %}
-
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 {% block header %}
   <h1>{% block title %}Submit{% endblock %}</h1>
 {% endblock %}
 
+<section class="content">
 {% block content %}
   <form method="post">
       <label for="message">Your message:</label>
       <br>
-      <input name="message" id="message">
+      <input name="message" id="message" required>
       <br><br>
       <label for="handle">Your name or handle:</label>
       <br>
-      <input name="handle" id="handle">
+      <input name="handle" id="handle" required>
       <br><br>
       <input type="submit" value="Submit message">
   </form>
   
 {% endblock %}
+</section>
